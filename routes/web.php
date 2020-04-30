@@ -23,4 +23,50 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+
+// Dashboard routes
+// Main page
+Route::get('/dashboard','dashboardController@main');
+
+// Users Routes :
+Route::get('/dashboard/users','usersController@list');
+Route::get('/dashboard/users/create','usersController@create');
+Route::post('/dashboard/users/add','usersController@add');
+Route::get('/dashboard/users/update/{id}','usersController@update');
+Route::post('/dashboard/users/update','usersController@modify');
+Route::delete('/dashboard/users/delete','usersController@delete');
+
+// Posts Routes :
+Route::get('/dashboard/posts','postsController@list');
+Route::get('/dashboard/posts/create','postsController@create');
+Route::post('/dashboard/posts/add','postsController@add');
+Route::get('/dashboard/posts/update/{id}','postsController@update');
+Route::post('/dashboard/posts/update','postsController@modify');
+Route::delete('/dashboard/posts/delete','postsController@delete');
+
+
+// Comments Routes :
+Route::get('/dashboard/comments','commentsController@list');
+Route::get('/dashboard/comments/create','commentsController@create');
+Route::post('/dashboard/comments/add','commentsController@add');
+Route::get('/dashboard/comments/update/{id}','commentsController@update');
+Route::post('/dashboard/comments/update','commentsController@modify');
+Route::delete('/dashboard/comments/delete','commentsController@delete');
+
+
+// Replies Controller :
+Route::get('/dashboard/replies','repliesController@list');
+Route::get('/dashboard/replies/create','repliesController@create');
+Route::post('/dashboard/replies/add','repliesController@add');
+Route::get('/dashboard/replies/update/{id}','repliesController@update');
+Route::post('/dashboard/replies/update','repliesController@modify');
+Route::delete('/dashboard/replies/delete','repliesController@delete');
+
+
+
+
+
+
+
 Route::get('/home', 'HomeController@index')->name('home');
