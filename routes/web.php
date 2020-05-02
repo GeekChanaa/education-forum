@@ -63,9 +63,24 @@ Route::get('/dashboard/replies/update/{id}','repliesController@update');
 Route::post('/dashboard/replies/update','repliesController@modify');
 Route::delete('/dashboard/replies/delete','repliesController@delete');
 
+// Sections Routes :
+Route::get('/dashboard/sections','sectionsController@list');
+Route::get('/dashboard/sections/create','sectionsController@create');
+Route::post('/dashboard/sections/add','sectionsController@add');
+Route::get('/dashboard/sections/update/{id}','sectionsController@update');
+Route::post('/dashboard/sections/update','sectionsController@modify');
+Route::delete('/dashboard/sections/delete','sectionsController@delete');
 
 
 
+
+
+// Main routes :
+Route::get('/sections','mainController@sections');
+Route::get('/section/{id}/posts','mainController@posts');
+Route::get('/post/{id}','mainController@post');
+Route::get('/section/{id}/createpost','mainController@create_post');
+Route::post('/add_post','mainController@add_post');
 
 
 
